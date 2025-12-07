@@ -1,0 +1,21 @@
+name = "english-learning-app"
+main = "src/index.ts"
+compatibility_date = "2024-12-01"
+
+# D1データベースのバインディング
+[[d1_databases]]
+binding = "DB"
+database_name = "summarize"
+database_id = "local-db-id" # ローカル開発用（本番環境では実際のIDに置き換える）
+
+# KVネームスペースのバインディング
+[[kv_namespaces]]
+binding = "SESSIONS"
+id = "local-kv-id" # ローカル開発用（本番環境では実際のIDに置き換える）
+preview_id = "local-kv-preview-id"
+
+[build]
+command = "npm run build"
+
+[site]
+bucket = "./dist/client"
